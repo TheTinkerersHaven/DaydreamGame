@@ -1,11 +1,13 @@
-[gd_scene load_steps=31 format=4 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=33 format=4 uid="uid://dtuqbrulfuv2l"]
 
 [ext_resource type="Texture2D" uid="uid://c1frgjf3p4v0l" path="res://media/world_tileset.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cbil0l3bm4e7m" path="res://scripts/main.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://b0b4t3rv8sbf6" path="res://media/knight.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://m73tke14awph" path="res://media/parete.png" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://kipay7cpuwn8" path="res://scripts/player.gd" id="3_h2yge"]
 [ext_resource type="AudioStream" uid="uid://cojocp5xvmi3f" path="res://sounds/OverworldTheme.wav" id="5_lquwl"]
 [ext_resource type="AudioStream" uid="uid://3cg86mhfqbod" path="res://sounds/jump.wav" id="6_7mycd"]
+[ext_resource type="FontFile" uid="uid://d23nps6tax4aj" path="res://fonts/PixelOperator8-Bold.ttf" id="7_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("1_0xm2m")
@@ -424,6 +426,7 @@ animations = [{
 size = Vector2(36, 47)
 
 [node name="Node" type="Node"]
+script = ExtResource("1_5vw27")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 800.0
@@ -498,25 +501,30 @@ drag_left_margin = 1.0
 drag_right_margin = 1.0
 drag_bottom_margin = 0.0
 
-[node name="FadeLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D"]
-
-[node name="FadeRect" type="ColorRect" parent="CharacterBody2D/Camera2D/FadeLayer"]
-visible = false
-offset_right = 800.0
-offset_bottom = 600.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="CharacterBody2D/Camera2D"]
-offset_left = -357.0
-offset_top = -276.0
-offset_right = -317.0
-offset_bottom = -253.0
-text = "SCORE: "
-uppercase = true
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_lquwl")
 autoplay = true
 
 [node name="Jump_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7mycd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="FadeLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer/FadeLayer"]
+visible = false
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/FadeLayer"]
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 201.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("7_272bh")
+theme_override_font_sizes/font_size = 25
+text = "SCORE: 0"
+uppercase = true

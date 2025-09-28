@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var jump_sfx = $"../Jump_SFX"
 @onready var player_sprite = $AnimatedSprite2D
-@onready var fade_rect = $Camera2D/FadeLayer/FadeRect
+@onready var fade_rect = $"../CanvasLayer/FadeLayer/FadeRect"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
@@ -23,7 +23,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		player_sprite.stop()
-		print(velocity.y)
 	else:
 		player_sprite.play()
 
@@ -45,19 +44,24 @@ func _physics_process(delta: float) -> void:
 	# Rileva caduta
 	if not was_on_floor and is_on_floor():
 		if previous_velocity_y > MAX_SAFE_LANDING_SPEED:
-			respawn()
+			_emit_death_and_respawn()
 
 	was_on_floor = is_on_floor()
 	previous_velocity_y = velocity.y  # salva la velocità prima del reset
 
 	move_and_slide()
 
-func respawn() -> void:
-	var tween := create_tween()
+signal died
 
-	# Fade-out	var tween := create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 1.0, 0.3)  # da trasparente a opaco in 0.5s
-	await tween.finished
+func _emit_death_and_respawn():
+	emit_signal("died")
+	await respawn()
+
+func respawn() -> void:
+	# Fade-out
+	var fade_out_tween := create_tween()
+	fade_out_tween.tween_property(fade_rect, "modulate:a", 1.0, 0.3)
+	await fade_out_tween.finished
 	await get_tree().create_timer(0.3).timeout
 
 	# Respawn
@@ -65,6 +69,6 @@ func respawn() -> void:
 	velocity = Vector2.ZERO
 
 	# Fade-in
-	tween = create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 0.0, 0.3)
-	await tween.finished
+	var fade_in_tween := create_tween()
+	fade_in_tween.tween_property(fade_rect, "modulate:a", 0.0, 0.3)
+	await fade_in_tween.finished

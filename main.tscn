@@ -498,6 +498,22 @@ drag_left_margin = 1.0
 drag_right_margin = 1.0
 drag_bottom_margin = 0.0
 
+[node name="FadeLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D"]
+
+[node name="FadeRect" type="ColorRect" parent="CharacterBody2D/Camera2D/FadeLayer"]
+visible = false
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CharacterBody2D/Camera2D"]
+offset_left = -357.0
+offset_top = -276.0
+offset_right = -317.0
+offset_bottom = -253.0
+text = "SCORE: "
+uppercase = true
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_lquwl")
 autoplay = true

@@ -5,11 +5,13 @@ var max_height := 0
 var score := 0
 
 func _ready():
+	var area = $Area2D
+	area.body_entered.connect(_on_body_entered)
+	
 	player = get_node("CharacterBody2D")
 	if not player:
 		print("Player not found")
 	else:
-		player.disconnect("died", Callable(self, "_on_player_died"))  # Prevent duplicates
 		player.connect("died", Callable(self, "_on_player_died"))
 
 func _process(delta):
@@ -24,6 +26,7 @@ func _on_player_died() -> void:
 	print("Player died — score update triggered")
 	if score < 100:
 		score = 0
+		max_height = 0
 	else:
 		score -= 100
 	update_score_display()
@@ -35,3 +38,9 @@ func update_score_display():
 		score_label.text = "Score: %d" % score
 	else:
 		print("Label not found!")
+		
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		var current_scene := get_tree().current_scene
+		if current_scene and current_scene.scene_file_path != "res://livello2.tscn":
+			get_tree().change_scene_to_file("res://livello2.tscn")

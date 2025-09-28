@@ -1,16 +1,16 @@
-[gd_scene load_steps=34 format=4 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=34 format=4 uid="uid://u58oh6eu6dl7"]
 
-[ext_resource type="Texture2D" uid="uid://c1frgjf3p4v0l" path="res://media/world_tileset.png" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cbil0l3bm4e7m" path="res://scripts/main.gd" id="1_272bh"]
-[ext_resource type="Texture2D" uid="uid://b0b4t3rv8sbf6" path="res://media/knight.png" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://m73tke14awph" path="res://media/parete.png" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://kipay7cpuwn8" path="res://scripts/player.gd" id="3_h2yge"]
-[ext_resource type="AudioStream" uid="uid://cojocp5xvmi3f" path="res://sounds/OverworldTheme.wav" id="5_lquwl"]
-[ext_resource type="AudioStream" uid="uid://3cg86mhfqbod" path="res://sounds/jump.wav" id="6_7mycd"]
-[ext_resource type="FontFile" uid="uid://d23nps6tax4aj" path="res://fonts/PixelOperator8-Bold.ttf" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cbil0l3bm4e7m" path="res://scripts/main.gd" id="1_1s4yg"]
+[ext_resource type="Texture2D" uid="uid://ci6ol8m5uu03g" path="res://media/pareteLivello2.png" id="1_w4621"]
+[ext_resource type="Texture2D" uid="uid://c1frgjf3p4v0l" path="res://media/world_tileset.png" id="2_n6kms"]
+[ext_resource type="Script" uid="uid://kipay7cpuwn8" path="res://scripts/player.gd" id="3_1s4yg"]
+[ext_resource type="Texture2D" uid="uid://b0b4t3rv8sbf6" path="res://media/knight.png" id="4_m24kf"]
+[ext_resource type="AudioStream" uid="uid://cojocp5xvmi3f" path="res://sounds/OverworldTheme.wav" id="5_h23me"]
+[ext_resource type="AudioStream" uid="uid://3cg86mhfqbod" path="res://sounds/jump.wav" id="6_tc4uy"]
+[ext_resource type="FontFile" uid="uid://d23nps6tax4aj" path="res://fonts/PixelOperator8-Bold.ttf" id="8_h23me"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
-texture = ExtResource("1_0xm2m")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1s4yg"]
+texture = ExtResource("2_n6kms")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -265,88 +265,88 @@ texture = ExtResource("1_0xm2m")
 4:6/0 = 0
 4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_7mycd"]
+[sub_resource type="TileSet" id="TileSet_m24kf"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lquwl")
+sources/0 = SubResource("TileSetAtlasSource_1s4yg")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(192, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(224, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(192, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
-atlas = ExtResource("1_ig7tw")
+atlas = ExtResource("4_m24kf")
 region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7mycd"]
@@ -429,57 +429,57 @@ size = Vector2(36, 47)
 size = Vector2(922, 35)
 
 [node name="Node" type="Node"]
-script = ExtResource("1_272bh")
+script = ExtResource("1_1s4yg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 800.0
 offset_bottom = 600.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect/TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect/TextureRect/TextureRect"]
 layout_mode = 0
 offset_top = -600.0
 offset_right = 800.0
-texture = ExtResource("2_h2yge")
+texture = ExtResource("1_w4621")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(2, 0)
 scale = Vector2(4.17, 4.17)
-tile_map_data = PackedByteArray("AAAMAAgAAAAAAAEAAAAMAAcAAAAAAAEAAAAMAAYAAAAAAAEAAAAMAAUAAAAAAAEAAAAMAAQAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAAMAAAAAAAAAAEAAAAMAP//AAAAAAEAAAD/////AAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAAAAEAAAD//wgAAAAAAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAACAAEAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAcAAAAAAAAAAAACAAgAAAAAAAEAAAADAAcAAAAAAAAAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAEAAcAAAAAAAAAAAAFAAgAAAAAAAEAAAAFAAcAAAAAAAAAAAAGAAgAAAAAAAEAAAAGAAcAAAAAAAAAAAAHAAgAAAAAAAEAAAAHAAcAAAAAAAAAAAAIAAgAAAAAAAEAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAEAAAAMAP7/AAAAAAEAAAAMAP3/AAAAAAEAAAAMAPz/AAAAAAEAAAAMAPv/AAAAAAEAAAAMAPr/AAAAAAEAAAAMAPn/AAAAAAEAAAAMAPj/AAAAAAEAAAAMAPf/AAAAAAEAAAAMAPb/AAAAAAEAAAAMAPX/AAAAAAEAAAAMAPT/AAAAAAEAAAAMAPP/AAAAAAEAAAAMAPL/AAAAAAEAAAAMAPH/AAAAAAEAAAAMAPD/AAAAAAEAAAAMAO7/AAAAAAEAAAAMAO3/AAAAAAEAAAAMAOz/AAAAAAEAAAAMAOv/AAAAAAEAAAAMAO//AAAAAAEAAAAMAOn/AAAAAAEAAAAMAOr/AAAAAAEAAAAMAOj/AAAAAAEAAAAMAOf/AAAAAAEAAAAMAOb/AAAAAAEAAAAMAOX/AAAAAAEAAAAMAOT/AAAAAAEAAAAMAOP/AAAAAAEAAAAMAOL/AAAAAAEAAAAMAOH/AAAAAAEAAAAMAOD/AAAAAAEAAAAMAN//AAAAAAEAAAAMAN7/AAAAAAEAAAAMAN3/AAAAAAEAAAAMANz/AAAAAAEAAAAMANv/AAAAAAEAAAAMANr/AAAAAAEAAAAMANn/AAAAAAEAAAAMANj/AAAAAAEAAAAMANf/AAAAAAEAAAAMANb/AAAAAAEAAAAMANX/AAAAAAEAAAAMANT/AAAAAAEAAAAMANP/AAAAAAEAAAAMAND/AAAAAAEAAAAMAM//AAAAAAEAAAAMAM7/AAAAAAEAAAAMAM3/AAAAAAEAAAAMAMz/AAAAAAEAAAAMAMv/AAAAAAEAAAAMAMr/AAAAAAEAAAAMAMn/AAAAAAEAAAAMANH/AAAAAAEAAAAMANL/AAAAAAEAAAALAMn/AAAAAAEAAAAKAMn/AAAAAAEAAAAJAMn/AAAAAAEAAAAIAMn/AAAAAAEAAAAHAMn/AAAAAAEAAAAGAMn/AAAAAAEAAAAFAMn/AAAAAAEAAAAEAMn/AAAAAAEAAAADAMn/AAAAAAEAAAACAMn/AAAAAAEAAAABAMn/AAAAAAEAAAD//8n/AAAAAAEAAAD//8r/AAAAAAEAAAD//8v/AAAAAAEAAAD//8z/AAAAAAEAAAD//83/AAAAAAEAAAD//87/AAAAAAEAAAD//8//AAAAAAEAAAD//9D/AAAAAAEAAAD//9T/AAAAAAEAAAD//9X/AAAAAAEAAAD//9b/AAAAAAEAAAD//9f/AAAAAAEAAAD//9j/AAAAAAEAAAD//9n/AAAAAAEAAAD//9r/AAAAAAEAAAD//9v/AAAAAAEAAAD//9z/AAAAAAEAAAD//9P/AAAAAAEAAAD//9L/AAAAAAEAAAD//9H/AAAAAAEAAAD//93/AAAAAAEAAAD//97/AAAAAAEAAAD//9//AAAAAAEAAAD//+D/AAAAAAEAAAD//+H/AAAAAAEAAAD//+L/AAAAAAEAAAD//+P/AAAAAAEAAAD//+T/AAAAAAEAAAD//+X/AAAAAAEAAAD//+b/AAAAAAEAAAD//+f/AAAAAAEAAAD//+j/AAAAAAEAAAD//+n/AAAAAAEAAAD//+r/AAAAAAEAAAD//+v/AAAAAAEAAAD//+z/AAAAAAEAAAD//+3/AAAAAAEAAAD//+7/AAAAAAEAAAD//+//AAAAAAEAAAD///D/AAAAAAEAAAD///H/AAAAAAEAAAD///L/AAAAAAEAAAD///P/AAAAAAEAAAD///T/AAAAAAEAAAD///X/AAAAAAEAAAD///b/AAAAAAEAAAD///f/AAAAAAEAAAD///j/AAAAAAEAAAD///n/AAAAAAEAAAD///r/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAAJAAQAAAACAAEAAAAKAAQAAAACAAEAAAALAAQAAAACAAEAAAAHAAIAAAACAAEAAAAGAAQAAAACAAEAAAAFAAQAAAACAAEAAAAHAP//AAACAAEAAAABAPj/AAACAAEAAAAAAPj/AAACAAEAAAAKAPz/AAACAAEAAAAKAAAAAAACAAEAAAALAPz/AAACAAEAAAAJAPX/AAACAAEAAAACAPX/AAACAAEAAAABAPX/AAACAAEAAAAHAPL/AAACAAEAAAAIAPL/AAACAAEAAAADAPL/AAACAAEAAAABAPD/AAACAAEAAAAAAPD/AAACAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAAMAAMAAAAAAAEAAAD///v/AAAAAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAAAP//AAACAAEAAAADAP7/AAACAAEAAAAEAP7/AAACAAEAAAAGAPz/AAACAAEAAAAHAPz/AAACAAEAAAACAPv/AAACAAEAAAABAPv/AAACAAEAAAAAAPv/AAACAAEAAAAIAPn/AAACAAEAAAAJAPn/AAACAAEAAAAKAPn/AAACAAEAAAADAPb/AAACAAEAAAAEAPf/AAACAAEAAAAFAPf/AAACAAEAAAAGAPT/AAACAAEAAAAJAPD/AAACAAEAAAAKAPD/AAACAAEAAAALAO//AAACAAEAAAAJAO3/AAACAAEAAAAIAO3/AAACAAEAAAAFAPD/AAACAAEAAAAEAO//AAACAAEAAAALAOr/AAACAAEAAAAGAOz/AAACAAEAAAAFAOz/AAACAAEAAAACAOv/AAACAAEAAAABAOv/AAACAAEAAAAEAOj/AAACAAEAAAAFAOj/AAACAAEAAAAJAOb/AAACAAEAAAAIAOb/AAACAAEAAAAIAOn/AAACAAEAAAADAOX/AAACAAEAAAACAOX/AAACAAEAAAAGAOT/AAACAAEAAAAAAOj/AAACAAEAAAAKAOP/AAACAAEAAAAHAOH/AAACAAEAAAABAOH/AAACAAEAAAADAOD/AAACAAEAAAAEAOL/AAACAAEAAAAKAN//AAACAAEAAAAGAN3/AAACAAEAAAAHAN3/AAACAAEAAAAIAN3/AAACAAEAAAACAN3/AAACAAEAAAABAN3/AAACAAEAAAADANv/AAACAAEAAAAEANv/AAACAAEAAAAKANv/AAACAAEAAAALANv/AAACAAEAAAAFAN//AAACAAEAAAAGANn/AAACAAEAAAAHANn/AAACAAEAAAAKANj/AAACAAEAAAAIANf/AAACAAEAAAAHANf/AAACAAEAAAACANj/AAACAAEAAAABANj/AAACAAEAAAACANb/AAACAAEAAAADANb/AAACAAEAAAAFANT/AAACAAEAAAAGANT/AAACAAEAAAAFANf/AAACAAEAAAAJANT/AAACAAEAAAAKANT/AAACAAEAAAAKANb/AAACAAEAAAACANP/AAACAAEAAAADANP/AAACAAEAAAAAANH/AAACAAEAAAABANH/AAACAAEAAAAAANT/AAACAAEAAAAIANH/AAACAAEAAAAHANH/AAACAAEAAAAKAND/AAACAAEAAAALAND/AAACAAEAAAAGAM//AAACAAEAAAAEAND/AAACAAEAAAADAM7/AAACAAEAAAACAM7/AAACAAEAAAAAAMz/AAACAAEAAAABAMz/AAACAAEAAAAIAM3/AAACAAEAAAAJAM3/AAACAAEAAAAAAMn/AAAAAAEAAAA=")
-tile_set = SubResource("TileSet_7mycd")
+tile_map_data = PackedByteArray("AAAMAAgAAAAAAAEAAAAMAAcAAAAAAAEAAAAMAAYAAAAAAAEAAAAMAAUAAAAAAAEAAAAMAAQAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAAMAAAAAAAAAAEAAAAMAP//AAAAAAEAAAD/////AAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAAAAEAAAD//wgAAAAAAAEAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAcAAAAAAAAAAAACAAgAAAAAAAEAAAADAAcAAAAAAAAAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAEAAcAAAAAAAAAAAAFAAgAAAAAAAEAAAAFAAcAAAAAAAAAAAAGAAgAAAAAAAEAAAAGAAcAAAAAAAAAAAAHAAgAAAAAAAEAAAAHAAcAAAAAAAAAAAAIAAgAAAAAAAEAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAEAAAAMAP7/AAAAAAEAAAAMAP3/AAAAAAEAAAAMAPz/AAAAAAEAAAAMAPv/AAAAAAEAAAAMAPr/AAAAAAEAAAAMAPn/AAAAAAEAAAAMAPj/AAAAAAEAAAAMAPf/AAAAAAEAAAAMAPb/AAAAAAEAAAAMAPX/AAAAAAEAAAAMAPT/AAAAAAEAAAAMAPP/AAAAAAEAAAAMAPL/AAAAAAEAAAAMAPH/AAAAAAEAAAAMAPD/AAAAAAEAAAAMAO7/AAAAAAEAAAAMAO3/AAAAAAEAAAAMAOz/AAAAAAEAAAAMAOv/AAAAAAEAAAAMAO//AAAAAAEAAAAMAOn/AAAAAAEAAAAMAOr/AAAAAAEAAAAMAOj/AAAAAAEAAAAMAOf/AAAAAAEAAAAMAOb/AAAAAAEAAAAMAOX/AAAAAAEAAAAMAOT/AAAAAAEAAAAMAOP/AAAAAAEAAAAMAOL/AAAAAAEAAAAMAOH/AAAAAAEAAAAMAOD/AAAAAAEAAAAMAN//AAAAAAEAAAAMAN7/AAAAAAEAAAAMAN3/AAAAAAEAAAAMANz/AAAAAAEAAAAMANv/AAAAAAEAAAAMANr/AAAAAAEAAAAMANn/AAAAAAEAAAAMANj/AAAAAAEAAAAMANf/AAAAAAEAAAAMANb/AAAAAAEAAAAMANX/AAAAAAEAAAAMANT/AAAAAAEAAAAMANP/AAAAAAEAAAAMAND/AAAAAAEAAAAMAM//AAAAAAEAAAAMAM7/AAAAAAEAAAAMAM3/AAAAAAEAAAAMAMz/AAAAAAEAAAAMAMv/AAAAAAEAAAAMAMr/AAAAAAEAAAAMAMn/AAAAAAEAAAAMANH/AAAAAAEAAAAMANL/AAAAAAEAAAALAMn/AAAAAAEAAAAKAMn/AAAAAAEAAAAJAMn/AAAAAAEAAAAIAMn/AAAAAAEAAAAHAMn/AAAAAAEAAAAGAMn/AAAAAAEAAAAFAMn/AAAAAAEAAAAEAMn/AAAAAAEAAAADAMn/AAAAAAEAAAACAMn/AAAAAAEAAAABAMn/AAAAAAEAAAAAAMn/AAAAAAEAAAD//8n/AAAAAAEAAAD//8r/AAAAAAEAAAD//8v/AAAAAAEAAAD//8z/AAAAAAEAAAD//83/AAAAAAEAAAD//87/AAAAAAEAAAD//8//AAAAAAEAAAD//9D/AAAAAAEAAAD//9T/AAAAAAEAAAD//9X/AAAAAAEAAAD//9b/AAAAAAEAAAD//9f/AAAAAAEAAAD//9j/AAAAAAEAAAD//9n/AAAAAAEAAAD//9r/AAAAAAEAAAD//9v/AAAAAAEAAAD//9z/AAAAAAEAAAD//9P/AAAAAAEAAAD//9L/AAAAAAEAAAD//9H/AAAAAAEAAAD//93/AAAAAAEAAAD//97/AAAAAAEAAAD//9//AAAAAAEAAAD//+D/AAAAAAEAAAD//+H/AAAAAAEAAAD//+L/AAAAAAEAAAD//+P/AAAAAAEAAAD//+T/AAAAAAEAAAD//+X/AAAAAAEAAAD//+b/AAAAAAEAAAD//+f/AAAAAAEAAAD//+j/AAAAAAEAAAD//+n/AAAAAAEAAAD//+r/AAAAAAEAAAD//+v/AAAAAAEAAAD//+z/AAAAAAEAAAD//+3/AAAAAAEAAAD//+7/AAAAAAEAAAD//+//AAAAAAEAAAD///D/AAAAAAEAAAD///H/AAAAAAEAAAD///L/AAAAAAEAAAD///P/AAAAAAEAAAD///T/AAAAAAEAAAD///X/AAAAAAEAAAD///b/AAAAAAEAAAD///f/AAAAAAEAAAD///j/AAAAAAEAAAD///n/AAAAAAEAAAD///r/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAAMAAMAAAAAAAEAAAD///v/AAAAAAEAAAAHAAUAAAACAAEAAAAJAAMAAAACAAEAAAALAAEAAAACAAEAAAAIAAAAAAACAAEAAAAFAP//AAACAAEAAAACAP7/AAACAAEAAAAAAPz/AAACAAEAAAAEAPz/AAACAAEAAAAHAP3/AAACAAEAAAAJAPv/AAACAAEAAAAGAPr/AAACAAEAAAALAPn/AAACAAEAAAAIAPj/AAACAAEAAAADAPn/AAACAAEAAAABAPn/AAACAAEAAAAFAPb/AAACAAEAAAABAPT/AAACAAEAAAAEAPL/AAACAAEAAAAIAPD/AAACAAEAAAAKAO3/AAACAAEAAAAFAO7/AAACAAEAAAABAOz/AAACAAEAAAAIAOv/AAACAAEAAAAEAOr/AAACAAEAAAAKAOn/AAACAAEAAAALAOn/AAACAAEAAAADAOf/AAACAAEAAAACAOf/AAACAAEAAAAGAOX/AAACAAEAAAAHAOX/AAACAAEAAAAKAOT/AAACAAEAAAALAOT/AAACAAEAAAACAOP/AAACAAEAAAABAOP/AAACAAEAAAAFAOL/AAACAAEAAAAGAOL/AAACAAEAAAAJAOD/AAACAAEAAAAKAOD/AAACAAEAAAAFAN7/AAACAAEAAAAEAN7/AAACAAEAAAABAN3/AAACAAEAAAACAN3/AAACAAEAAAADANr/AAACAAEAAAAGANv/AAACAAEAAAAJANn/AAACAAEAAAAAANj/AAACAAEAAAAGANf/AAACAAEAAAALANb/AAACAAEAAAAJANT/AAACAAEAAAACANX/AAACAAEAAAAFANP/AAACAAEAAAAKANH/AAACAAEAAAAIAM//AAACAAEAAAACANH/AAACAAEAAAAEAM7/AAACAAEAAAAGAMz/AAACAAEAAAAKAMv/AAACAAEAAAA=")
+tile_set = SubResource("TileSet_m24kf")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("3_h2yge")
+script = ExtResource("3_1s4yg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(34.000008, 437)
@@ -505,11 +505,11 @@ drag_right_margin = 1.0
 drag_bottom_margin = 0.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_lquwl")
+stream = ExtResource("5_h23me")
 autoplay = true
 
 [node name="Jump_SFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_7mycd")
+stream = ExtResource("6_tc4uy")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-120, -3681)
@@ -533,6 +533,6 @@ offset_left = 44.0
 offset_top = 25.0
 offset_right = 160.0
 offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("7_272bh")
+theme_override_fonts/font = ExtResource("8_h23me")
 text = "SCORE: 0"
 uppercase = true

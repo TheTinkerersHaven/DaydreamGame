@@ -37,20 +37,24 @@ func _physics_process(delta: float) -> void:
 		if(Globals.sfx): jump_sfx.play()
 
 	# Movimento orizzontale
-	var direction := Input.get_axis("left", "right")
-	if direction:
-		player_sprite.animation = "Run"
-		velocity.x = direction * SPEED
-		player_sprite.flip_h = direction < 0
-	else:
-		if not is_dead: player_sprite.animation = "Idle"
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if not is_dead:
+		var direction := Input.get_axis("left", "right")
+		if direction:
+			player_sprite.animation = "Run"
+			velocity.x = direction * SPEED
+			player_sprite.flip_h = direction < 0
+		else:
+			if not is_dead: player_sprite.animation = "Idle"
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Rileva caduta
 	if not was_on_floor and is_on_floor() and not is_dead:
 		if previous_velocity_y > MAX_SAFE_LANDING_SPEED:
 			is_dead = true
-			if(Globals.sfx): death_sfx.play()
+			player_sprite.animation = "Death"
+			player_sprite.play()
+			if(Globals.sfx):
+				death_sfx.play()
 			_emit_death_and_respawn()
 
 	was_on_floor = is_on_floor()
@@ -65,8 +69,6 @@ func _emit_death_and_respawn():
 	await respawn()
 
 func respawn() -> void:
-	player_sprite.animation = "Death"
-	player_sprite.play()
 	await get_tree().create_timer(0.8).timeout
 	# Fade-out
 	var fade_out_tween := create_tween()

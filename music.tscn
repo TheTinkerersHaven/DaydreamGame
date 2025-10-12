@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b03tfhk8i3g8g"]
 
 [ext_resource type="Script" uid="uid://cqbkeeerfdkyb" path="res://scripts/globalmusic.gd" id="1_w5q55"]
-[ext_resource type="AudioStream" uid="uid://bu84326c4n6ug" path="res://sounds/click.wav" id="3_khlsn"]
+[ext_resource type="AudioStream" uid="uid://c7a5lg4e42ixd" path="res://sounds/click.wav" id="3_khlsn"]
 
 [node name="Music" type="Node"]
 script = ExtResource("1_w5q55")

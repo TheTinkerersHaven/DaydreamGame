@@ -46,5 +46,9 @@ func update_score_display():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		var current_scene := get_tree().current_scene
-		if current_scene and current_scene.scene_file_path != "res://livello2.tscn":
-			get_tree().change_scene_to_file("res://livello2.tscn")
+		if current_scene and current_scene.scene_file_path == "res://Livello1.tscn":
+			get_tree().change_scene_to_file("res://Livello2.tscn")
+		elif current_scene and current_scene.scene_file_path == "res://Livello2.tscn":
+			get_tree().change_scene_to_file("res://Livello3.tscn")
+		elif current_scene and current_scene.scene_file_path == "res://Livello3.tscn":
+			get_tree().change_scene_to_file("res://End.tscn")

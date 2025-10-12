@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Daydream"
-run/main_scene="uid://dtuqbrulfuv2l"
+run/main_scene="uid://dtlddthvwyysi"
 config/features=PackedStringArray("4.5", "Mobile")
+
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+Music="*res://music.tscn"
 
 [display]
 
@@ -22,4 +27,5 @@ window/size/viewport_height=600
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

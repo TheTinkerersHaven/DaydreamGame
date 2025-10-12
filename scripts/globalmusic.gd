@@ -8,18 +8,16 @@ func _ready():
 	songPlayer()
 
 func songPlayer():
-	var name = get_tree().current_scene.name
+	var scenename = get_tree().current_scene.name
 	if Globals.music:
-		if name == "Menu" || name == "Settings":
-			canzone = load("res://sounds/menumusic.mp3")
-		elif name == "Livello1":
-			canzone = load("res://sounds/level1.mp3")
-		elif name == "Livello2":
-			canzone = load("res://sounds/level2.mp3")
+		if scenename == "Menu" || name == "Settings":
+			canzone = load("res://sounds/menumusic.ogg")
+		elif scenename == "Livello1":
+			canzone = load("res://sounds/level1.ogg")
+		elif scenename == "Livello2":
+			canzone = load("res://sounds/level2.ogg")
 		
 		if canzone:
+			canzone.loop = true
 			musicplayer.stream = canzone
 			musicplayer.play()
-
-func _on_music_finished() -> void:
-	musicplayer.play()

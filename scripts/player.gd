@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var jump_sfx = $"../Jump_SFX"
+@onready var death_sfx = $"../Death_SFX"
 @onready var player_sprite = $AnimatedSprite2D
 @onready var fade_rect = $"../CanvasLayer/FadeLayer/FadeRect"
 
@@ -11,6 +12,9 @@ const MAX_SAFE_LANDING_SPEED = 900.0
 var start_position: Vector2
 var previous_velocity_y := 0.0
 var was_on_floor := false
+var is_dead := false
+
+signal died
 
 func _ready() -> void:
 	fade_rect.modulate.a = 1.0  # inizia scuro
@@ -20,44 +24,50 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Applica gravità
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		player_sprite.stop()
-	else:
-		player_sprite.play()
+	if not is_dead:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+			player_sprite.stop()
+		else:
+			player_sprite.play()
 
 	# Salto
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		if(Globals.sfx): jump_sfx.play()
 
 	# Movimento orizzontale
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left", "right")
 	if direction:
 		player_sprite.animation = "Run"
 		velocity.x = direction * SPEED
 		player_sprite.flip_h = direction < 0
 	else:
-		player_sprite.animation = "Idle"
+		if not is_dead: player_sprite.animation = "Idle"
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Rileva caduta
-	if not was_on_floor and is_on_floor():
+	if not was_on_floor and is_on_floor() and not is_dead:
 		if previous_velocity_y > MAX_SAFE_LANDING_SPEED:
+			is_dead = true
+			if(Globals.sfx): death_sfx.play()
 			_emit_death_and_respawn()
 
 	was_on_floor = is_on_floor()
 	previous_velocity_y = velocity.y  # salva la velocità prima del reset
 
-	move_and_slide()
-
-signal died
+	if not is_dead:
+		move_and_slide()
 
 func _emit_death_and_respawn():
+	print("Died signal transmitted")
 	emit_signal("died")
 	await respawn()
 
 func respawn() -> void:
+	player_sprite.animation = "Death"
+	player_sprite.play()
+	await get_tree().create_timer(0.8).timeout
 	# Fade-out
 	var fade_out_tween := create_tween()
 	fade_out_tween.tween_property(fade_rect, "modulate:a", 1.0, 0.3)
@@ -67,8 +77,10 @@ func respawn() -> void:
 	# Respawn
 	global_position = start_position
 	velocity = Vector2.ZERO
+	player_sprite.animation = "Idle"
 
 	# Fade-in
 	var fade_in_tween := create_tween()
 	fade_in_tween.tween_property(fade_rect, "modulate:a", 0.0, 0.3)
 	await fade_in_tween.finished
+	is_dead = false

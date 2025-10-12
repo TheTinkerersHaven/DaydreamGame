@@ -27,7 +27,7 @@ func _process(delta):
 		update_score_display()
 
 func _on_player_died() -> void:
-	print("Player died — score update triggered")
+	print("Died signal received — score update triggered")
 	if Globals.score < 100:
 		Globals.score = 0
 		max_height = 0
